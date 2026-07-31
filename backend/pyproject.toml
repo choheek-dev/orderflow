@@ -1,0 +1,9 @@
+[project]
+name = "orderflow-backend"
+version = "0.1.0"
+description = "Backend API for the OrderFlow order management platform"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi[standard-no-fastapi-cloud-cli]>=0.140.0",
+]
