@@ -5,7 +5,11 @@ description = "Backend API for the OrderFlow order management platform"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "alembic>=1.18.5",
     "fastapi[standard-no-fastapi-cloud-cli]>=0.140.0",
+    "psycopg[binary]>=3.3.4",
+    "pydantic-settings>=2.14.2",
+    "sqlalchemy>=2.0.51",
 ]
 
 [tool.fastapi]
@@ -14,8 +18,18 @@ entrypoint = "app.main:app"
 [dependency-groups]
 dev = [
     "pytest>=9.1.1",
+    "ruff>=0.16.1",
 ]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
